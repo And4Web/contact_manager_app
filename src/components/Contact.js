@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 
 class Contact extends Component {
   
-  // static propTypes = {
-  //   contacts: PropTypes.object.isRequired,
+  static propTypes = {
+    contact: PropTypes.object.isRequired,
       
-  // }
+  }
   render() {
-    const {name, email, phone} = this.props;
+    const {contact} = this.props;
     return (
       <div className="card card-body m-3">
-        <h4 >{name}</h4>
+        <h4 >{contact.name}</h4>
         <ul className="list-group">
-          <li className="list-group-item">{email}</li>
-          <li className="list-group-item">{phone}</li>
+          <li className="list-group-item">{contact.email}</li>
+          <li className="list-group-item">{contact.phone}</li>
         </ul>
       </div>
     )

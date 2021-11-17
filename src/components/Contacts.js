@@ -11,19 +11,19 @@ class Contacts extends Component {
           id: 1,
           name:  'Anand',
           email: 'anand@gmail.com',
-          phone: 555-5555555
+          phone: '555-5555555'
         },
         {
           id: 2,
           name:  'Amul',
           email: 'amul@gmail.com',
-          phone: 555-5345555
+          phone: '555-5345555'
         },
         {
           id: 3,
           name:  'Aditi',
           email: 'aditi@gmail.com',
-          phone: 555-5893555
+          phone: '555-5893555'
         }
       ]
     }
@@ -33,7 +33,7 @@ class Contacts extends Component {
     const {contacts} = this.state; 
     return (
       <div>
-        { contacts.map(contact => <Contact key={contact.id} name={contact.name} email={contact.email} phone={contact.phone}/>)}
+        { contacts.map(contact => <Contact key={contact.id} contact={contact}/>)}
       </div>
     )
   }
