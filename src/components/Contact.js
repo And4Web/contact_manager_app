@@ -12,7 +12,7 @@ class Contact extends Component {
     const {contact} = this.props;
     return (
       <div className="card card-body m-3">
-        <h4 >{contact.name} <i className="fas fa-sort-down  position-absolute ms-2"></i>
+        <h4 >{contact.name} <i onClick={() => console.log('Hello.')} className="fas fa-sort-down  position-absolute ms-2"></i>
 </h4>
         <ul className="list-group">
           <li className="list-group-item">{contact.email}</li>
