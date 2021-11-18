@@ -1,4 +1,3 @@
-import React, { StrictMode } from 'react';
 import PropTypes from 'prop-types';
 
 function Header(props) {

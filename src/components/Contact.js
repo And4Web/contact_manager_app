@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 class Contact extends Component {   
   static propTypes = {
-    contact: PropTypes.object.isRequired,
-      
+    contact: PropTypes.object.isRequired,      
   }
+  
   render() {
     const {contact} = this.props;
     return (
