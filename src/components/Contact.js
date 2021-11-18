@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class Contact extends Component {   
   state = {}
   onShowClick = () => {
-    console.log(this.state);
+    console.log("Hello");
    }
 
   static propTypes = {
