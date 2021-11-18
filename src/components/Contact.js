@@ -6,7 +6,7 @@ class Contact extends Component {
     showContactInfo: false,
   }
  
-  onDeleteClick = () => {
+  onDeleteClick = (props) => {
     this.props.deleteClickHandler();
   }
 
