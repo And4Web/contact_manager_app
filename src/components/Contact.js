@@ -2,16 +2,21 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
 class Contact extends Component {   
+  state = {}
+  onShowClick = () => {
+    console.log(this.state);
+   }
+
   static propTypes = {
     contact: PropTypes.object.isRequired,      
   }
-  
+    
   render() {
     const {contact} = this.props;
     return (
       <div className="card card-body m-3">
-        <h4 >{contact.name} <i className="fas fa-sort-down  position-absolute ms-2"></i>
-</h4>
+        <h4 >{contact.name} <i onClick={this.onShowClick} className="fas fa-sort-down  position-absolute ms-2"></i>
+        </h4>
         <ul className="list-group">
           <li className="list-group-item">{contact.email}</li>
           <li className="list-group-item">{contact.phone}</li>
