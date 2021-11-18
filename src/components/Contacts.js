@@ -29,11 +29,15 @@ class Contacts extends Component {
     }
   }
 
+  deleteContact = () => {
+    console.log("function to delete.");
+  }
+
   render() {
     const {contacts} = this.state; 
     return (
       <React.Fragment>
-        { contacts.map(contact => <Contact key={contact.id} contact={contact}/>)}
+        { contacts.map(contact => <Contact key={contact.id} contact={contact} deleteClickHandler= {this.deleteContact}/>)}
       </React.Fragment>
     )
   }
