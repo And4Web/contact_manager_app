@@ -28,7 +28,7 @@ export class Provider extends Component{
   }
   render(){
     return(
-      <Context.Provider value={this.state}>
+      <Context.Provider value = {this.state}>
         {this.props.children}
       </Context.Provider>
     )

@@ -13,11 +13,17 @@ class Contacts extends Component {
   }
 
   render() {
-    const {contacts} = this.state; 
-    return (
-      <React.Fragment>
-        { contacts.map(contact => <Contact key={contact.id} contact={contact} deleteClickHandler= {this.deleteContact.bind(this, contact.id)}/>)}
-      </React.Fragment>
+    return(
+    <Consumer>
+      {
+        (value) => {
+          const { contacts } = value;
+          <React.Fragment>
+             { contacts.map(contact => <Contact key={contact.id} contact={contact} deleteClickHandler= {this.deleteContact.bind(this, contact.id)}/>)}
+          </React.Fragment>
+        }
+      }
+    </Consumer>
     )
   }
 }
