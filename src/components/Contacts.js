@@ -7,8 +7,7 @@ class Contacts extends Component {
   render() {
     return(
     <Consumer>
-      {
-        (value) => {
+      {(value) => {
           const { contacts } = value;
           return(
           <React.Fragment>
