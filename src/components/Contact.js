@@ -7,12 +7,12 @@ class Contact extends Component {
   }
  
   onDeleteClick = (props) => {
-    this.props.deleteClickHandler();
+    
   }
 
   static propTypes = {
     contact: PropTypes.object.isRequired,
-    deleteClickHandler: PropTypes.func.isRequired,    
+        
   }
     
   render() {
