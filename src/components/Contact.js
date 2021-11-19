@@ -8,7 +8,7 @@ class Contact extends Component {
   }
  
   onDeleteClick = (id, dispatch) => {
-    dispatch({type:'DELETE_CONTACT', payload: id})
+    dispatch({type:'DELETE_CONTACT', payload: id});
   }
 
   static propTypes = {
