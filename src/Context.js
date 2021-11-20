@@ -9,8 +9,8 @@ const reducer = (state, action) => {
         ...state,
         contacts: state.contacts.filter(contact => contact.id !== action.payload)
       }
-      default:
-        return state;
+    default:
+      return state;
   }
 }
 
