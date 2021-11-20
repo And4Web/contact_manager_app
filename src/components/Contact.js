@@ -8,6 +8,7 @@ class Contact extends Component {
   }
  
   onDeleteClick = (id, dispatch) => {
+    console.log('delete...')
     dispatch({type:'DELETE_CONTACT', payload: id});
   }
 
