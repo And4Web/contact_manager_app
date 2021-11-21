@@ -25,6 +25,7 @@ class AddContact extends Component {
              <label htmlFor="phone" className="ms-1 mb-2 ">Phone</label>
               <input type="text" name="phone" className="form-control form-control-lg" placeholder="Enter your phone..."/>
             </div>
+          <input type="text" value="Add Contact" className="btn btn-block btn-primary mt-3 w-100"/>
           </form>
         </div>
       </div>
