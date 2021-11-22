@@ -6,9 +6,7 @@ class AddContact extends Component {
   onSubmit = e => {
     e.preventDefault();
     console.log(this.state);
-  }
-
-  
+  } 
 
   render() {
     const {name, email, phone} = this.state;
