@@ -1,15 +1,21 @@
 import React, { Component } from 'react'
 
-class AddContact extends Component {
-  
+class AddContact extends Component {  
 
   onSubmit = e => {
     e.preventDefault();
     console.log(this.state);
   } 
 
+  static defaultProps = {
+    name: 'Fred',
+    email: 'fred@gmail.com',
+    phone: '777-777777'
+  }
+
   render() {
-    const {name, email, phone} = this.state;
+    const {name, email, phone} = this.props;
+    
     return (
       <div className="card m-3">
         <div className="card-header">Add Contact</div>
