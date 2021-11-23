@@ -45,7 +45,7 @@ class AddContact extends Component {
                   <form onSubmit={this.onSubmit.bind(this, dispatch)}>
 
                   <TextInputGroup name="name" label="Name" placeholder="Enter your name..." value={name} onChange={this.onChange}/>
-                  <TextInputGroup name="email" label="Email" placeholder="Enter your email..." value={email} onChange={this.onChange}/>
+                  <TextInputGroup name="email" label="Email" placeholder="Enter your email..." value={email} onChange={this.onChange} type="email"/>
                   <TextInputGroup name="phone" label="Phone" placeholder="Enter your phone..." value={phone} onChange={this.onChange}/>
                   
                   <input  type="submit" value="Add Contact" className="btn btn-block btn-primary mt-3 w-100"/>
