@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/layout/Header';
 import About from './components/pages/About';
 import Home from './components/pages/Home';
+import NotFound from './components/pages/NotFound';
 import AddContact from './components/contacts/AddContact'
 
 import { Provider } from './Context'
@@ -22,8 +23,10 @@ function App() {
           <Route exact path='/about' element={<About/>}/>
           <Route exact path='/contacts' element={<Contacts/>}/>
           <Route exact path='/contacts/add' element={<AddContact/>}/>
+          
+          <Route path='*' element={<NotFound/>}/>
+          
         </Routes>
-
           
         </div>
       </div>
