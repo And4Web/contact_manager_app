@@ -8,6 +8,7 @@ class AddContact extends Component {
     name:'',
     email:'',
     phone:'',
+    errors: {}
   }
 
   onSubmit = (dispatch, e) => {
@@ -19,21 +20,34 @@ class AddContact extends Component {
       email,
       phone
     };
+
+    // Check for errors:
+    if(name === ''){
+      this.setState({errors:{name: 'Name is Required.'}});
+    }
+    if(email === ''){
+      this.setState({errors:{email: 'Email is Required.'}});
+    }
+    if(phone === ''){
+      this.setState({errors:{phone: 'Phone is Required.'}});
+    }
+
     dispatch({type: 'ADD_CONTACT', payload: newContact});
     
-    //clear state
+    //clear state:
 
     this.setState({
       name: '',
       email: '',
-      phone: ''
+      phone: '',
+      errors: {}
     })
   }
 
   onChange = e => this.setState({[e.target.name]: e.target.value});
 
   render() {
-    const {name, email, phone} = this.state;
+    const {name, email, phone, errors} = this.state;
 
     return(
       <Consumer>
@@ -46,9 +60,9 @@ class AddContact extends Component {
                 <div className="card-body ">
                   <form onSubmit={this.onSubmit.bind(this, dispatch)}>
 
-                  <TextInputGroup name="name" label="Name" placeholder="Enter your name..." value={name} onChange={this.onChange}/>
-                  <TextInputGroup name="email" label="Email" placeholder="Enter your email..." value={email} onChange={this.onChange} type="email"/>
-                  <TextInputGroup name="phone" label="Phone" placeholder="Enter your phone..." value={phone} onChange={this.onChange}/>
+                  <TextInputGroup name="name" label="Name" placeholder="Enter your name..." value={name} onChange={this.onChange} error={errors}/>
+                  <TextInputGroup name="email" label="Email" placeholder="Enter your email..." value={email} onChange={this.onChange} type="email" error={errors}/>
+                  <TextInputGroup name="phone" label="Phone" placeholder="Enter your phone..." value={phone} onChange={this.onChange} error={errors}/>
                   
                   <input  type="submit" value="Add Contact" className="btn btn-block btn-primary mt-3 w-100"/>
           
