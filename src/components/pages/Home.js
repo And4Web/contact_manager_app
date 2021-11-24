@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
       <h1 className="display-5 mb-3 ms-3">
-      <span className="text-danger">Home</span> Page
+      <span className="text-primary">Home</span> Page
       </h1>
     </div>
   )
