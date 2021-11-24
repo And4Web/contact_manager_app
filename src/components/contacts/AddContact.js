@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Consumer} from '../../Context';
 import TextInputGroup from '../layout/TextInputGroup';
-// import {uuid} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 class AddContact extends Component {
   state = {
@@ -14,7 +14,7 @@ class AddContact extends Component {
     e.preventDefault();
     const {name, email, phone} = this.state;
     const newContact = {
-      // id: uuid(),
+      id: uuidv4(),
       name,
       email,
       phone
@@ -22,7 +22,7 @@ class AddContact extends Component {
     dispatch({type: 'ADD_CONTACT', payload: newContact});
     
     //clear state
-    
+
     this.setState({
       name: '',
       email: '',
