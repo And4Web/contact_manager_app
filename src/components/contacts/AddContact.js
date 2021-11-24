@@ -20,7 +20,9 @@ class AddContact extends Component {
       phone
     };
     dispatch({type: 'ADD_CONTACT', payload: newContact});
-
+    
+    //clear state
+    
     this.setState({
       name: '',
       email: '',
