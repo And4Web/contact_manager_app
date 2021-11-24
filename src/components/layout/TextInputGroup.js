@@ -24,4 +24,5 @@ TextInputGroup.defaultProps = {
   type: 'text'
 }
 
+//exported as default so while importing curly brackets are not required.
 export default TextInputGroup;
