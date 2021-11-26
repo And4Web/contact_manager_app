@@ -12,7 +12,7 @@ class Contact extends Component {
     axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
     .then(res => dispatch({type:'DELETE_CONTACT', payload: id}));
 
-    console.log('delete...')
+    console.log('delete...', id);
     
   }
 
