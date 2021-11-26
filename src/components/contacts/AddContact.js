@@ -60,20 +60,26 @@ class AddContact extends Component {
           value => {
             const {dispatch} = value;
             return(
-              <div className="card m-3">
-               <div className="card-header">Add Contact</div>
-                <div className="card-body ">
-                  <form onSubmit={this.onSubmit.bind(this, dispatch)}>
+              <div>
+                <h1 className="display-5 mb-3 ms-3">
+                  <span className="text-primary">Add</span> Contact
+                </h1>
+                <div className="card m-3">
+                <div className="card-header">Fill this form</div>
+                  <div className="card-body ">
+                    <form onSubmit={this.onSubmit.bind(this, dispatch)}>
 
-                  <TextInputGroup name="name" label="Name" placeholder="Enter your name..." value={name} onChange={this.onChange} error={errors}/>
-                  <TextInputGroup name="email" label="Email" placeholder="Enter your email..." value={email} onChange={this.onChange} type="email" error={errors}/>
-                  <TextInputGroup name="phone" label="Phone" placeholder="Enter your phone..." value={phone} onChange={this.onChange} error={errors}/>
-                  
-                  <input  type="submit" value="Add Contact" className="btn btn-block btn-primary mt-3 w-100"/>
-          
-                  </form>
+                    <TextInputGroup name="name" label="Name" placeholder="Enter your name..." value={name} onChange={this.onChange} error={errors}/>
+                    <TextInputGroup name="email" label="Email" placeholder="Enter your email..." value={email} onChange={this.onChange} type="email" error={errors}/>
+                    <TextInputGroup name="phone" label="Phone" placeholder="Enter your phone..." value={phone} onChange={this.onChange} error={errors}/>
+                    
+                    <input  type="submit" value="Add Contact" className="btn btn-block btn-primary mt-3 w-100"/>
+            
+                    </form>
+                  </div>
                 </div>
               </div>
+              
             );
           }
         }

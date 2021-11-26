@@ -31,6 +31,7 @@ class Contact extends Component {
             {this.state.showContactInfo ? (<ul className="list-group">
             <li className="list-group-item">{contact.email}</li>
             <li className="list-group-item">{contact.phone}</li>
+            
             </ul>) : null}
         
             </div>
