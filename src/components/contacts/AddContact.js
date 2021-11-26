@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Consumer} from '../../Context';
 import TextInputGroup from '../layout/TextInputGroup';
-import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
+// import { v4 as uuidv4 } from 'uuid';
 
 class AddContact extends Component {
   state = {
@@ -15,11 +16,14 @@ class AddContact extends Component {
     e.preventDefault();
     const {name, email, phone} = this.state;
     const newContact = {
-      id: uuidv4(),
+      // id: uuidv4(),
       name,
       email,
       phone
     };
+
+    axios.post('https://jsonplaceholder.typicode.com/users', newContact)
+    .then(res => dispatch({type: 'ADD_CONTACT', payload: newContact}));
 
     // Check for errors:
     if(name === ''){
@@ -34,8 +38,6 @@ class AddContact extends Component {
       this.setState({errors:{phone: 'Phone is Required.'}});
       return;
     }
-
-    dispatch({type: 'ADD_CONTACT', payload: newContact});
     
     //clear state:
 
@@ -45,8 +47,9 @@ class AddContact extends Component {
       phone: '',
       errors: {}
     })
-
-    this.props.history.push('/contacts');
+    
+    //pushing to history not working in react router v6. we have to use hooks useNavigate() method for this, but it can be used only in functional components. Learn hooks. 
+    // this.props.history.push('/contacts');
   }
 
   onChange = e => this.setState({[e.target.name]: e.target.value});
