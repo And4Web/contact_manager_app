@@ -64,7 +64,7 @@ class EditContact extends Component {
                     <TextInputGroup name="email" label="Email" placeholder="Enter your email..." value={email} onChange={this.onChange} type="email" error={errors}/>
                     <TextInputGroup name="phone" label="Phone" placeholder="Enter your phone..." value={phone} onChange={this.onChange} error={errors}/>
                     
-                    <input  type="submit" value="Edit Contact" className="btn btn-block btn-primary mt-3 w-100"/>
+                    <input  type="submit" value="Update Contact" className="btn btn-block btn-primary mt-3 w-100"/>
             
                     </form>
                   </div>

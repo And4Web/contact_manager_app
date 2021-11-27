@@ -35,7 +35,7 @@ class Contact extends Component {
               <h4 >{contact.name} <i onClick={() => this.setState({showContactInfo: !this.state.showContactInfo})} className="fas fa-sort-down  position-absolute ms-2" style={{cursor: 'pointer'}}></i>
               <i className="fas fa-times" style={{cursor: 'pointer', float: 'right', color: 'red'}} onClick={this.onDeleteClick.bind(this, id, dispatch)}/>
               <Link to ={`contact/edit/${id}`}>
-                <i className="fas fa-pencil" 
+                <i className="fas fa-pencil-alt" 
                     style={{
                     cursor: 'pointer', 
                     float: 'right', 
