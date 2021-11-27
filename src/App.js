@@ -7,6 +7,7 @@ import Home from './components/pages/Home';
 import Test from './components/tests/test';
 import NotFound from './components/pages/NotFound';
 import AddContact from './components/contacts/AddContact'
+import EditContact from './components/contacts/EditContact'
 
 import { Provider } from './Context'
 
@@ -24,6 +25,7 @@ function App() {
           <Route exact path='/about' element={<About/>}/>
           <Route exact path='/contacts' element={<Contacts/>}/>
           <Route exact path='/contacts/add' element={<AddContact/>}/>
+          <Route exact path='/contacts/edit/:id' element={<EditContact/>}/>
           <Route exact path='/test' element={<Test/>}/>          
           <Route path='*' element={<NotFound/>}/>
           
