@@ -1,6 +1,6 @@
 import './App.css';
 import Contacts from './components/contacts/Contacts';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {HashRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/layout/Header';
 import About from './components/pages/About';
 import Home from './components/pages/Home';
