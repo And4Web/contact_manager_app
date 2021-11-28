@@ -2,30 +2,34 @@ import React, { Component } from 'react';
 import {Consumer} from '../../Context';
 import TextInputGroup from '../layout/TextInputGroup';
 import axios from 'axios';
-// import { v4 as uuidv4 } from 'uuid';
 
 class EditContact extends Component {
-  state = {
+  state = { 
     name:'',
     email:'',
     phone:'',
     errors: {}
+  
+  }
+
+  async componentDidMount(){
+    const {id} = this.props.match.params;
+    const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
+
+    const contact = res.data;
+
+    this.setState({
+      name: contact.name,
+      email: contact.email,
+      phone: contact.phone
+    })
+
   }
 
   onSubmit = async (dispatch, e) => {
     e.preventDefault();
     const {name, email, phone} = this.state;
-    const newContact = {
-      // id: uuidv4(),
-      name,
-      email,
-      phone
-    };
-
-    const res = await axios.post('https://jsonplaceholder.typicode.com/users', newContact)
-    dispatch({type: 'ADD_CONTACT', payload: res.data});
-
-    // Check for errors:
+        // Check for errors:
     if(name === ''){
       this.setState({errors:{name: 'Name is Required.'}});
       return;
@@ -38,6 +42,17 @@ class EditContact extends Component {
       this.setState({errors:{phone: 'Phone is Required.'}});
       return;
     }
+
+    const {id} = this.props.match.params;
+
+    const updContact = {
+      name,
+      email,
+      phone
+    };
+
+    const res = await axios.put(`https://jsonplaceholder.typicode.com/users/${id}`, updContact);
+    dispatch({type: 'UPDATE_CONTACT', payload: res.data});
     
     
     //clear state:
