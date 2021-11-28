@@ -25,6 +25,19 @@ class EditContact extends Component {
     const res = await axios.post('https://jsonplaceholder.typicode.com/users', newContact)
     dispatch({type: 'ADD_CONTACT', payload: res.data});
 
+    // Check for errors:
+    if(name === ''){
+      this.setState({errors:{name: 'Name is Required.'}});
+      return;
+    }
+    if(email === ''){
+      this.setState({errors:{email: 'Email is Required.'}});
+      return;
+    }
+    if(phone === ''){
+      this.setState({errors:{phone: 'Phone is Required.'}});
+      return;
+    }
     
     
     //clear state:
