@@ -6,10 +6,10 @@ import About from './components/pages/About';
 import Home from './components/pages/Home';
 import Test from './components/tests/test';
 import NotFound from './components/pages/NotFound';
-import AddContact from './components/contacts/AddContact'
-import EditContact from './components/contacts/EditContact'
+import AddContact from './components/contacts/AddContact';
+import EditContact from './components/contacts/EditContact';
 
-import { Provider } from './Context'
+import { Provider } from './Context';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
